@@ -17,57 +17,55 @@ const Form = (props) => {
     }
 
     return (
-        <form className='form container' onSubmit={onSubmit}>
+        <div>
             <div className='form-group submit'>
                 <h2>Add a new user</h2>
+                <h3>General information</h3>
                 <p>{errors.username}</p>
                 <p>{errors.password}</p>
                 <p>{errors.email}</p>
                 <p>{errors.tos}</p>
             </div>
-            
-            <div className='form-group inputs'>
-                <h3>General information</h3>
-                    {/* inputs */}
-                    <label>Name:
-                        <input 
-                            value={username}
-                            onChange={onChange}
-                            name='first name'
-                            type='text'
-                        />
-                    </label>
-                    <br />
-                    <label>Email:
-                        <input
-                            value={email}
-                            onChange={onChange}
-                            name='email'
-                            type='text'
-                        />
-                    </label>
-                    <br />
-                    <label>Password:
-                        <input 
-                            value={password}
-                            onChange={onChange}
-                            name="password"
-                            type="password"
-                        />
-                    </label>
-                    <br />
-                    <label>Terms of Service:
-                        <input
-                            checked={tos}
-                            onChange={onChange}
-                            name="tos"
-                            type="checkbox"
-                        />
-                    </label>
-                    <br />
-                    <input value="Create a user" type="submit"/>
-            </div>
-        </form>
+            <form onSubmit={onSubmit}>
+                <label>Name:
+                    <input 
+                        value={username}
+                        onChange={onChange}
+                        name='username'
+                        type='text'
+                    />
+                </label>
+                <br />
+                <label>Email:
+                    <input
+                        value={email}
+                        onChange={onChange}
+                        name='email'
+                        type='text'
+                    />
+                </label>
+                <br />
+                <label>Password:
+                    <input 
+                        value={password}
+                        onChange={onChange}
+                        name="password"
+                        type="password"
+                    />
+                </label>
+                <br />
+                <label>Terms of Service:
+                    <input
+                        checked={tos}
+                        onChange={onChange}
+                        name="tos"
+                        type="checkbox"
+                    />
+                </label>
+                <br />
+                <input value="Create a user" type="submit"/>
+            </form>
+        </div>
     )
 }
 

@@ -10,7 +10,7 @@ import * as yup from 'yup';
 
 // import axios and User
 import axios from 'axios';
-// import User from './components/User';
+
 
 // initial states
 const initialFormValues = { username: '', password: '', email: '', tos: false };
@@ -42,17 +42,6 @@ function App() {
     validate(name, value);
     setFormValues({...formValues, [name]: value})
   }
-
-  // useEffect(() => {
-  //   axios.get('https://reqres.in/api/users')
-  //     .then(res => {
-  //       // console.log(res.data.data);
-  //       setUsers(res.data);
-  //     })
-  //     .catch(err => {
-  //       console.error(err);
-  //     })
-  // }, [])
 
   return (
     <div className="App">
