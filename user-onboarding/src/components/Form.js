@@ -2,8 +2,8 @@ import React from 'react';
 
 const Form = (props) => {
 
-    const { submit, change, errors } = props;
-    const { username, email, password, tos } = props.values
+    const { change, submit, errors } = props;
+    const { username, email, password, tos } = props.values;
 
     const onChange = evt => {
         const { name, value, checked, type } = evt.target;
@@ -21,6 +21,9 @@ const Form = (props) => {
             <div className='form-group submit'>
                 <h2>Add a new user</h2>
                 <p>{errors.username}</p>
+                <p>{errors.password}</p>
+                <p>{errors.email}</p>
+                <p>{errors.tos}</p>
             </div>
             
             <div className='form-group inputs'>
@@ -35,7 +38,7 @@ const Form = (props) => {
                         />
                     </label>
                     <br />
-                    <label>Email
+                    <label>Email:
                         <input
                             value={email}
                             onChange={onChange}
@@ -44,7 +47,7 @@ const Form = (props) => {
                         />
                     </label>
                     <br />
-                    <label>Password
+                    <label>Password:
                         <input 
                             value={password}
                             onChange={onChange}
@@ -52,15 +55,17 @@ const Form = (props) => {
                             type="password"
                         />
                     </label>
-
+                    <br />
                     <label>Terms of Service:
                         <input
-                            value={tos}
+                            checked={tos}
                             onChange={onChange}
                             name="tos"
                             type="checkbox"
                         />
                     </label>
+                    <br />
+                    <input value="Create a user" type="submit"/>
             </div>
         </form>
     )
