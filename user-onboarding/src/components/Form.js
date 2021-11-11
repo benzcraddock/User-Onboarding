@@ -63,7 +63,12 @@ const Form = (props) => {
                     />
                 </label>
                 <br />
-                <input value="Create a user" type="submit"/>
+                <input value="Create a user" name="submit" type="submit"/>
+                {/* <button
+                    id="button"
+                    disabled={disabled}
+                > Create a user
+                </button> */}
             </form>
         </div>
     )
