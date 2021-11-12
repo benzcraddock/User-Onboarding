@@ -53,5 +53,14 @@ describe('App', () => {
             submitBtn().click();
         })
     })
+
+    // check for form validation if an input is left empty
+    describe('Form validation if input is empty', () => {
+        it('can check for form validation', () => {
+            nameInput().should('have.value', '');
+            emailInput().should('have.value', '');
+            passwordInput().should('have.value', '');
+        })
+    })
             
 })
